@@ -19,25 +19,25 @@ const createInventory = (req, res) => {
     })
 }
 
-// const GetInventories = (req, res) => {
-// const query = req.query
-// let inventoriesDuplicate = inventories
-// if (query.price) {
-//     inventoriesDuplicate = inventoriesDuplicate.filter(std => std.price.includes(query.price))
-// }
+const GetInventories = (req, res) => {
+const query = req.query
+let inventoriesDuplicate = inventories
+if (query.price) {
+    inventoriesDuplicate = inventoriesDuplicate.filter(std => std.price.includes(query.price))
+}
 
-// if (req.limit) {
-//     inventoriesDuplicate = inventoriesDuplicate.slice(0, req.limit -1)
-// }
+if (req.limit) {
+    inventoriesDuplicate = inventoriesDuplicate.slice(0, req.limit -1)
+}
 
-// if (req.search) {
-//     inventoriesDuplicate = inventoriesDuplicate.filter(std => std.search.includes(query.search))
-// }
-//     res.status(200).json({
-//         data: inventoriesDuplicate,
-//         error: null
-//     })
-// }
+if (req.search) {
+    inventoriesDuplicate = inventoriesDuplicate.filter(std => std.search.includes(query.search))
+}
+    res.status(200).json({
+        data: inventoriesDuplicate,
+        error: null
+    })
+}
 
 const getSpecificInventory = (req, res) => {
     req.inventories = inventories
@@ -126,7 +126,7 @@ const writeFiles = (req, res, next) => {
 
 
 module.exports = {
-    // GetInventories,
+    GetInventories,
     createInventory,
     getSpecificInventory,
     delInventory,

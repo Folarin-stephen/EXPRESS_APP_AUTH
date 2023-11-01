@@ -9,7 +9,7 @@ const globalMiddleware = require('./middlewares/globalMiddlewares')
 const router = express.Router();
 
 router.use(globalMiddleware.apiKeyAuth)
-// router.get("/",  controller.GetInventories);
+router.get("/",  controller.GetInventories);
 
 router.get('/:id',middleware.checkId, controller.getSpecificInventory)
 
